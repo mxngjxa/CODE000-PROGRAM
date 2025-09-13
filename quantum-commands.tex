@@ -33,10 +33,10 @@
 % =============================================================================
 
 % Basic quantum states
-\newcommand{\ket}[1]{|#1\rangle}
-\newcommand{\bra}[1]{\langle#1|}
-\newcommand{\braket}[2]{\langle#1|#2\rangle}
-\newcommand{\ketbra}[2]{|#1\rangle\langle#2|}
+% \newcommand{\ket}{|#1\rangle}
+% \newcommand{\bra}{\langle#1|}
+% \newcommand{\braket}{\langle#1|#2\rangle}
+% \newcommand{\ketbra}{|#1\rangle\langle#2|}
 \newcommand{\expectation}[1]{\langle#1\rangle}
 
 % Common quantum states
@@ -77,7 +77,7 @@
 \newcommand{\ccnot}{\text{CCNOT}}
 \newcommand{\toffoli}{\text{Toffoli}}
 \newcommand{\fredkin}{\text{Fredkin}}
-\newcommand{\swap}{\text{SWAP}}
+% \newcommand{\swap}{\text{SWAP}}
 
 % Rotation gates
 \newcommand{\rx}[1]{R_x(#1)}
@@ -91,8 +91,8 @@
 \newcommand{\phaseP}[1]{P(#1)}
 
 % Measurement
-\newcommand{\measure}{\mathcal{M}}
-\newcommand{\proj}[1]{P_{#1}}
+% \newcommand{\measure}{\mathcal{M}}
+% \newcommand{\proj}[1]{P_{#1}}
 \newcommand{\projzero}{\proj{0}}
 \newcommand{\projone}{\proj{1}}
 
@@ -113,10 +113,10 @@
 
 % Tensor products
 \newcommand{\tensor}{\otimes}
-\newcommand{\bigotimes}{\bigotimes}
+% \newcommand{\bigotimes}{\bigotimes}
 
 % Trace operations
-\newcommand{\tr}{\text{Tr}}
+% \newcommand{\tr}{\text{Tr}}
 \newcommand{\ptr}[1]{\text{Tr}_{#1}}
 
 % =============================================================================
@@ -185,11 +185,11 @@
 % =============================================================================
 
 % Circuit elements (for use with quantikz)
-\newcommand{\qw}{\qw}
-\newcommand{\gate}[1]{\gate{#1}}
-\newcommand{\ctrl}{\ctrl{1}}
-\newcommand{\targ}{\targ{}}
-\newcommand{\meter}{\meter{}}
+% \newcommand{\qw}{\qw}
+% \newcommand{\gate}[1]{\gate{#1}}
+% \newcommand{\ctrl}{\ctrl{1}}
+% \newcommand{\targ}{\targ{}}
+% \newcommand{\meter}{\meter{}}
 
 % =============================================================================
 % MATHEMATICAL UTILITIES
@@ -197,12 +197,12 @@
 
 % Complex numbers
 \newcommand{\ii}{\mathrm{i}}
-\newcommand{\real}{\text{Re}}
+% \newcommand{\real}{\text{Re}}
 \newcommand{\imag}{\text{Im}}
 \newcommand{\conj}[1]{#1^*}
 
 % Matrix operations
-\newcommand{\rank}{\text{rank}}
+% \newcommand{\rank}{\text{rank}}
 \newcommand{\nullspace}{\text{null}}
 \newcommand{\colspace}{\text{col}}
 \newcommand{\rowspace}{\text{row}}
@@ -210,7 +210,7 @@
 % Probability
 \newcommand{\prob}[1]{\text{Pr}[#1]}
 \newcommand{\expect}[1]{\mathbb{E}[#1]}
-\newcommand{\var}[1]{\text{Var}[#1]}
+% \newcommand{\var}[1]{\text{Var}[#1]}
 
 % Sets
 \newcommand{\hilbert}{\mathcal{H}}
@@ -224,7 +224,7 @@
 % Time evolution
 \newcommand{\hamiltonian}{\mathcal{H}}
 \newcommand{\timeevol}[1]{e^{-\ii #1 t/\hbar}}
-\newcommand{\hbar}{\hbar}
+% \newcommand{\hbar}{\hbar}
 
 % Angular momentum
 \newcommand{\angmom}{\mathbf{J}}
@@ -232,7 +232,7 @@
 \newcommand{\orbital}{\mathbf{L}}
 
 % Commutators and anticommutators
-\newcommand{\comm}[2]{[#1, #2]}
+% \newcommand{\comm}[2]{[#1, #2]}
 \newcommand{\anticomm}[2]{\{#1, #2\}}
 
 % =============================================================================
@@ -254,120 +254,128 @@
 \maketitle
 \thispagestyle{fancy}
 
-\begin{multicols}{2}
+% \begin{multicols}{2}
 
 \section{Basic Quantum State Notation}
 
 \subsection{State Vectors}
-\begin{align}
-\text{Ket:} &\quad \ket{\psi} \text{ or } \qpsi \\
-\text{Bra:} &\quad \bra{\psi} \\
-\text{Braket:} &\quad \braket{\psi}{\phi} \\
-\text{Outer product:} &\quad \ketbra{\psi}{\phi} \\
-\text{Expectation:} &\quad \expectation{A} = \braket{\psi}{A|\psi}
-\end{align}
+\begin{alignat}{2}
+\text{Ket:}          &\quad && \ket{\psi} \text{ or } \qpsi \\
+\text{Bra:}          &\quad && \bra{\psi} \\
+\text{Braket:}       &\quad && \braket{\psi}{\phi} \\
+\text{Outer product:}&\quad && \ketbra{\psi}{\phi} \\
+\text{Expectation:}  &\quad && \expectation{A} = \braket{\psi}{A|\psi}
+\end{alignat}
 
 \subsection{Common States}
-\begin{align}
-\text{Computational basis:} &\quad \qzero, \qone \\
-\text{Superposition:} &\quad \qplus = \frac{1}{\sqrt{2}}(\qzero + \qone) \\
-&\quad \qminus = \frac{1}{\sqrt{2}}(\qzero - \qone) \\
-\text{Bell states:} &\quad \bellphi, \bellphim, \bellpsi, \bellpsim \\
-\text{Multi-qubit:} &\quad \GHZ, \Wstate
-\end{align}
+\begin{alignat}{2}
+\text{Computational basis:} &\quad && \qzero, \qone \\
+\text{Superposition:}       &\quad && \qplus = \frac{1}{\sqrt{2}}(\qzero + \qone) \\
+                             &\quad && \qminus = \frac{1}{\sqrt{2}}(\qzero - \qone) \\
+\text{Bell states:}         &\quad && \bellphi, \bellphim, \bellpsi, \bellpsim \\
+\text{Multi-qubit:}         &\quad && \GHZ, \Wstate
+\end{alignat}
+
 
 \section{Quantum Gates and Operations}
 
 \subsection{Single-Qubit Gates}
-\begin{align}
-\text{Pauli matrices:} &\quad \pauliX, \pauliY, \pauliZ \\
-\text{Hadamard:} &\quad \hadamard \\
-\text{Phase gates:} &\quad \phaseS, \phaseT, \phaseP{\theta} \\
-\text{Rotations:} &\quad \rx{\theta}, \ry{\theta}, \rz{\theta}
-\end{align}
+\begin{alignat}{2}
+\text{Pauli matrices:} &\quad && \pauliX, \pauliY, \pauliZ \\
+\text{Hadamard:}       &\quad && \hadamard \\
+\text{Phase gates:}    &\quad && \phaseS, \phaseT, \phaseP{\theta} \\
+\text{Rotations:}      &\quad && \rx{\theta}, \ry{\theta}, \rz{\theta}
+\end{alignat}
 
 \subsection{Multi-Qubit Gates}
-\begin{align}
-\text{CNOT:} &\quad \cnot \\
-\text{Toffoli:} &\quad \toffoli \text{ or } \ccnot \\
-\text{Fredkin:} &\quad \fredkin \\
-\text{SWAP:} &\quad \swap
-\end{align}
+\begin{alignat}{2}
+\text{CNOT:}     &\quad && \cnot \\
+\text{Toffoli:}  &\quad && \toffoli \text{ or } \ccnot \\
+\text{Fredkin:}  &\quad && \fredkin \\
+\text{SWAP:}     &\quad && \text{SAWP}
+\end{alignat}
 
 \section{Quantum Measurements}
 
-\begin{align}
-\text{Measurement operator:} &\quad \measure \\
-\text{Projectors:} &\quad \projzero, \projone, \proj{i} \\
-\text{Probability:} &\quad \prob{i} = \braket{\psi}{\proj{i}|\psi}
-\end{align}
+\begin{alignat}{2}
+\text{Measurement operator:} &\quad && \mathcal{M} \\
+\text{Projectors:}           &\quad && \projzero, \projone, \P_{i} \\
+\text{Probability:}          &\quad && \prob{i} = \braket{\psi}{\proj{i}|\psi}
+\end{alignat}
+
+% \newcommand{\measure}{\mathcal{M}}
+% \newcommand{\proj}[1]{P_{#1}}
+
 
 \section{Quantum Channels and Noise}
 
-\begin{align}
-\text{General channel:} &\quad \channel(\rho) \\
-\text{Depolarizing:} &\quad \depolar_p(\rho) \\
-\text{Bit flip:} &\quad \bitflip_p(\rho) \\
-\text{Phase flip:} &\quad \phaseflip_p(\rho)
-\end{align}
+\begin{alignat}{2}
+\text{General channel:} &\quad && \channel(\rho) \\
+\text{Depolarizing:}    &\quad && \depolar_p(\rho) \\
+\text{Bit flip:}        &\quad && \bitflip_p(\rho) \\
+\text{Phase flip:}      &\quad && \phaseflip_p(\rho)
+\end{alignat}
+
 
 \section{Quantum Information Measures}
 
-\begin{align}
-\text{Von Neumann entropy:} &\quad \vonneumann{\rho} \\
-\text{Conditional entropy:} &\quad \condentropy{A}{B} \\
-\text{Mutual information:} &\quad \mutualinfo{A}{B} \\
-\text{Fidelity:} &\quad \fidelity{\rho}{\sigma} \\
-\text{Trace distance:} &\quad \tracedist{\rho}{\sigma}
-\end{align}
+\begin{alignat}{2}
+\text{Von Neumann entropy:} &\quad && \vonneumann{\rho} \\
+\text{Conditional entropy:} &\quad && \condentropy{A}{B} \\
+\text{Mutual information:}  &\quad && \mutualinfo{A}{B} \\
+\text{Fidelity:}             &\quad && \fidelity{\rho}{\sigma} \\
+\text{Trace distance:}       &\quad && \tracedist{\rho}{\sigma}
+\end{alignat}
+
 
 \section{Quantum Algorithms}
 
 \subsection{Fourier Transform}
-\begin{align}
-\text{QFT:} &\quad \QFT\ket{x} = \frac{1}{\sqrt{N}} \sum_{k=0}^{N-1} e^{2\pi i xk/N}\ket{k} \\
-\text{Inverse QFT:} &\quad \iQFT
-\end{align}
+\begin{alignat}{2}
+\text{QFT:}         &\quad && \QFT\ket{x} = \frac{1}{\sqrt{N}} \sum_{k=0}^{N-1} e^{2\pi i xk/N}\ket{k} \\
+\text{Inverse QFT:} &\quad && \iQFT
+\end{alignat}
 
 \subsection{Oracles}
-\begin{align}
-\text{Boolean oracle:} &\quad \oraclef\ket{x}\ket{y} = \ket{x}\ket{y \oplus f(x)} \\
-\text{Phase oracle:} &\quad \oraclef\ket{x} = (-1)^{f(x)}\ket{x}
-\end{align}
+\begin{alignat}{2}
+\text{Boolean oracle:} &\quad && \oraclef\ket{x}\ket{y} = \ket{x}\ket{y \oplus f(x)} \\
+\text{Phase oracle:}   &\quad && \oraclef\ket{x} = (-1)^{f(x)}\ket{x}
+\end{alignat}
 
 \section{Error Correction}
 
-\begin{align}
-\text{Stabilizer group:} &\quad \stab = \langle g_1, g_2, \ldots, g_k \rangle \\
-\text{Syndrome:} &\quad \syndrome = (s_1, s_2, \ldots, s_k) \\
-\text{Code space:} &\quad \codespace \\
-\text{Logical codeword:} &\quad \codeword
-\end{align}
+\begin{alignat}{2}
+\text{Stabilizer group:}  &\quad && \stab = \langle g_1, g_2, \ldots, g_k \rangle \\
+\text{Syndrome:}          &\quad && \syndrome = (s_1, s_2, \ldots, s_k) \\
+\text{Code space:}        &\quad && \codespace \\
+\text{Logical codeword:}  &\quad && \codeword
+\end{alignat}
+
 
 \section{Mathematical Utilities}
 
 \subsection{Complex Numbers}
-\begin{align}
-\text{Imaginary unit:} &\quad \ii \\
-\text{Real part:} &\quad \real(z) \\
-\text{Imaginary part:} &\quad \imag(z) \\
-\text{Complex conjugate:} &\quad \conj{z}
-\end{align}
+\begin{alignat}{2}
+\text{Imaginary unit:}     &\quad && \ii \\
+\text{Real part:}          &\quad && \real(z) \\
+\text{Imaginary part:}     &\quad && \imag(z) \\
+\text{Complex conjugate:}  &\quad && \conj{z}
+\end{alignat}
 
 \subsection{Linear Algebra}
-\begin{align}
-\text{Tensor product:} &\quad A \tensor B \\
-\text{Trace:} &\quad \tr(A) \\
-\text{Partial trace:} &\quad \ptr{B}(\rho_{AB}) \\
-\text{Rank:} &\quad \rank(A)
-\end{align}
+\begin{alignat}{2}
+\text{Tensor product:}  &\quad && A \tensor B \\
+\text{Trace:}           &\quad && \tr(A) \\
+\text{Partial trace:}   &\quad && \ptr{B}(\rho_{AB}) \\
+\text{Rank:}            &\quad && \rank(A)
+\end{alignat}
 
 \subsection{Probability}
-\begin{align}
-\text{Probability:} &\quad \prob{\text{event}} \\
-\text{Expectation:} &\quad \expect{X} \\
-\text{Variance:} &\quad \var{X}
-\end{align}
+\begin{alignat}{2}
+\text{Probability:}  &\quad && \prob{\text{event}} \\
+\text{Expectation:}  &\quad && \expect{X} \\
+\text{Variance:}     &\quad && \var{X}
+\end{alignat}
 
 \section{Circuit Notation (with quantikz)}
 
@@ -381,13 +389,14 @@ Basic circuit elements:
 
 \section{Complexity Classes}
 
-\begin{align}
-\text{Bounded-error quantum polynomial:} &\quad \BQP \\
-\text{Quantum Merlin-Arthur:} &\quad \QMA \\
-\text{Quantum polynomial space:} &\quad \QPSPACE
-\end{align}
+\begin{alignat}{2}
+\text{Bounded-error quantum polynomial:} &\quad && \BQP \\
+\text{Quantum Merlin-Arthur:}           &\quad && \QMA \\
+\text{Quantum polynomial space:}        &\quad && \QPSPACE
+\end{alignat}
 
-\end{multicols}
+
+% \end{multicols}
 
 \section{Usage Examples}
 
