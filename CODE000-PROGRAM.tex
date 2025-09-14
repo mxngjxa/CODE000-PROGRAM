@@ -5,7 +5,10 @@
 \usepackage{amssymb}
 \usepackage[legalpaper, portrait, margin=1in]{geometry}
 \usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{quantikz} % For quantum circuit drawing
 \usepackage{minted}
+
 \usemintedstyle{manni}
 \graphicspath{ {./figures/} }
 \newcommand{\Rlogo}{\protect\includegraphics[height=1.8ex,keepaspectratio]{Rlogo.png}}
@@ -46,6 +49,13 @@ Sed tincidunt tortor eget dignissim tempor. Curabitur laoreet augue non posuere 
 
 
 \section{changeme}
+
+
+\begin{quantikz}
+\lstick{$|0\rangle$} & \gate{H} & \ctrl{1} & \qw \\
+\lstick{$|0\rangle$} & \qw      & \targ{}  & \qw
+\end{quantikz}
+
 
 
 \end{document}
