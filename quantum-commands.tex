@@ -12,6 +12,9 @@
 \usepackage{xcolor}
 \usepackage{fancyhdr}
 \usepackage{titlesec}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{booktabs}   % for \toprule, \midrule, \bottomrule
 
 % Page setup
 \pagestyle{fancy}
@@ -38,6 +41,11 @@
 % \newcommand{\braket}{\langle#1|#2\rangle}
 % \newcommand{\ketbra}{|#1\rangle\langle#2|}
 \newcommand{\expectation}[1]{\langle#1\rangle}
+
+\newcommand{\ketphi}{\ket{\phi}}
+\newcommand{\braphi}{\bra{\phi}}
+\newcommand{\ketpsi}{\ket{\psi}}
+\newcommand{\brapsi}{\bra{\psi]}}
 
 % Common quantum states
 \newcommand{\qzero}{\ket{0}}
@@ -432,5 +440,127 @@ Encoding: $\ket{0} \rightarrow \ket{000}$, $\ket{1} \rightarrow \ket{111}$
 
 Syndrome measurement: $s_1 = Z_1Z_2$, $s_2 = Z_2Z_3$
 \end{circuit}
+
+\section{Common Quantum Gates}
+
+
+\begin{table}[h!]
+\centering
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Gate} & \textbf{Matrix} \\
+\hline
+Hadamard ($H$) &
+$\dfrac{1}{\sqrt{2}} \begin{bmatrix}
+1 & 1 \\
+1 & -1
+\end{bmatrix}$ \\
+\hline
+Identity ($I$) &
+$\begin{bmatrix}
+1 & 0 \\
+0 & 1
+\end{bmatrix}$ \\
+\hline
+Phase ($S$) &
+$\begin{bmatrix}
+1 & 0 \\
+0 & i
+\end{bmatrix}$ \\
+\hline
+T-gate ($T$) &
+$\begin{bmatrix}
+1 & 0 \\
+0 & e^{i\pi/4}
+\end{bmatrix}$ \\
+\hline
+NOT ($X$) &
+$\begin{bmatrix}
+0 & 1 \\
+1 & 0
+\end{bmatrix}$ \\
+\hline
+Y-gate ($Y$) &
+$\begin{bmatrix}
+0 & -i \\
+i & 0
+\end{bmatrix}$ \\
+\hline
+Z-gate ($Z$) &
+$\begin{bmatrix}
+1 & 0 \\
+0 & -1
+\end{bmatrix}$ \\
+\hline
+Rotation $R(\theta)$ / Phase $P(\theta)$ &
+$\begin{bmatrix}
+1 & 0 \\
+0 & e^{i\theta}
+\end{bmatrix}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Gate} & \textbf{Matrix} \\
+\hline
+\multicolumn{2}{|c|}{\textbf{Multi-Qubit Gates}} \\
+\hline
+CNOT ($CX$) &
+$\begin{bmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 0
+\end{bmatrix}$ \\
+\hline
+Controlled-Z ($CZ$) &
+$\begin{bmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & -1
+\end{bmatrix}$ \\
+\hline
+Controlled-$U$ ($CU$) &
+$\begin{bmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & U_{00} & U_{01} \\
+0 & 0 & U_{10} & U_{11}
+\end{bmatrix}$ \\
+\hline
+SWAP &
+$\begin{bmatrix}
+1 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix}$ \\
+\hline
+Toffoli (CCNOT) &
+\scriptsize
+$\begin{bmatrix}
+1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+0 & 0 & 0 & 0 & 0 & 0 & 1 & 0
+\end{bmatrix}$
+\normalsize \\
+\hline
+\end{tabular}
+\end{table}
+
+
+
 
 \end{document}
