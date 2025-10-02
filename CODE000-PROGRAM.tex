@@ -38,14 +38,27 @@
 \newcommand{\Rlogo}{\protect\includegraphics[height=1.8ex,keepaspectratio]{Rlogo.png}}
 
 \input{config.tex}
-\input{quantum-commands.tex}
+% \input{quantum-commands.tex}
 
-\theoremstyle{plain}
+\theoremstyle{definition}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{postulate}[theorem]{Postulate}
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{lemma}[theorem]{Lemma}
+
+% % alt styling: theorem is separate from rest
+% % Theorem: its own counter, resets each section
+% \newtheorem{theorem}{Theorem}[section]
+
+% % Create an independent base counter for the "definition group"
+% \newtheorem{fact}{\!\!}[section] % invisible title; serves only as a counter
+
+% % Make these share the "fact" counter (not the theorem counter)
+% \newtheorem{definition}[fact]{Definition}
+% \newtheorem{postulate}[fact]{Postulate}
+% \newtheorem{corollary}[fact]{Corollary}
+% \newtheorem{lemma}[fact]{Lemma}
 
 \newtheorem*{example}{Example}
 
