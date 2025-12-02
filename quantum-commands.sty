@@ -1,0 +1,94 @@
+% quantum-commands.sty
+% --- Created: December 2, 2025 ---
+
+% =================================================================
+% I. BASIC MATH FIELDS AND SPACES
+% =================================================================
+
+% A. Basic Fields (R, C, N, Z, Q)
+\newcommand{\R}{\mathbb{R}} % Real numbers
+\newcommand{\C}{\mathbb{C}} % Complex numbers
+\newcommand{\N}{\mathbb{N}} % Natural numbers
+\newcommand{\Z}{\mathbb{Z}} % Integers
+\newcommand{\Q}{\mathbb{Q}} % Rational numbers
+
+% B. Vector Spaces (R^n, C^n, etc.)
+\newcommand{\Rn}{\mathbb{R}^n} % n-dim Real space
+\newcommand{\Cn}{\mathbb{C}^n} % n-dim Complex space
+\newcommand{\Nn}{\mathbb{N}^n}
+\newcommand{\Zn}{\mathbb{Z}^n}
+\newcommand{\Qn}{\mathbb{Q}^n}
+
+% C. Matrix Spaces (R^{m x n}, C^{n x n}, etc.)
+\newcommand{\Rmn}{\mathbb{R}^{m \times n}} % Real m x n matrices
+\newcommand{\Cmn}{\mathbb{C}^{m \times n}} % Complex m x n matrices
+\newcommand{\Rnn}{\mathbb{R}^{n \times n}} % Real n x n matrices
+\newcommand{\Cnn}{\mathbb{C}^{n \times n}} % Complex n x n matrices
+
+% =================================================================
+% II. VECTORS AND SCALAR OPERATIONS
+% =================================================================
+
+% A. Vector Symbols (Bolded)
+\newcommand{\zerovec}{\mathbf{0}} % Zero vector
+\newcommand{\vvec}{\mathbf{v}}    % Vector v
+\newcommand{\uvec}{\mathbf{u}}    % Vector u
+\newcommand{\wvec}{\mathbf{w}}    % Vector w
+\newcommand{\rvec}{\mathbf{r}}    % Vector r
+\newcommand{\cvec}{\mathbf{c}}    % Vector c (sometimes used for coefficient vector)
+
+% B. Norms and Unit Vectors (Requires amsmath and maybe physics package for norm command)
+\newcommand{\vnorm}{\norm{\vvec}}  % Norm of v
+\newcommand{\unorm}{\norm{\uvec}}  % Norm of u
+\newcommand{\unitv}{\hat{\vvec}}  % Unit vector v
+\newcommand{\unitu}{\hat{\uvec}}  % Unit vector u
+
+% C. Standard Basis Vectors (i, j, k)
+\newcommand{\ibase}{\mathbf{\hat{i}}} % i-hat basis vector
+\newcommand{\jbase}{\mathbf{\hat{j}}} % j-hat basis vector
+\newcommand{\kbase}{\mathbf{\hat{k}}} % k-hat basis vector
+
+% =================================================================
+% III. COMMON MATH OPERATIONS
+% =================================================================
+
+% A. Calculus/Derivatives
+\newcommand{\od}[2]{\frac{d#1}{d#2}} % Ordinary derivative
+\newcommand{\pd}[2]{\frac{\partial#1}{\partial#2}} % Partial derivative
+
+% B. Summation
+\newcommand{\sumonen}{\sum_{i=1}^{n}} % Sum from 1 to n
+\newcommand{\sumzeron}{\sum_{i=0}^{n}} % Sum from 0 to n
+\newcommand{\sumoneinf}{\sum_{i=1}^{\infty}} % Sum from 1 to infinity
+\newcommand{\sumzeroinf}{\sum_{i=0}^{\infty}} % Sum from 0 to infinity
+
+% C. Vector Algebra
+\newcommand{\innerprod}[2]{\left\langle#1 \cdot #2 \right\rangle} % Standard inner product (Dot product notation)
+\newcommand{\projection}[2]{\text{proj}_{#1}{#2}} % Vector projection
+
+% D. Conjugation/Adjoint
+\newcommand{\conj}[1]{{#1}^*} % Complex conjugate (Often used for scalar or matrix elements)
+
+% =================================================================
+% IV. QUANTUM MECHANICS / BRA-KET NOTATION
+% =================================================================
+
+% A. Arbitrary States (Phi, Psi, Chi)
+\newcommand{\ketphi}{\ket{\phi}} % Ket phi
+\newcommand{\braphi}{\bra{\phi}} % Bra phi
+\newcommand{\ketpsi}{\ket{\psi}} % Ket psi
+\newcommand{\brapsi}{\bra{\psi}} % Bra psi
+\newcommand{\ketchi}{\ket{\chi}} % Ket chi
+\newcommand{\brachi}{\bra{\chi}} % Bra chi
+
+% B. Common Single-Qubit States
+\newcommand{\ketzero}{\ket{0}}   % Ket 0 (Computational basis)
+\newcommand{\ketone}{\ket{1}}    % Ket 1 (Computational basis)
+\newcommand{\ketplus}{\ket{+}}   % Ket + (Hadamard basis)
+\newcommand{\ketminus}{\ket{-}}  % Ket - (Hadamard basis)
+
+% C. Bell States (Maximally Entangled Two-Qubit States)
+\newcommand{\bellphi}{\ket{\Phi^+}}  % Bell state Phi+
+\newcommand{\bellphim}{\ket{\Phi^-}} % Bell state Phi-
+\newcommand{\bellpsi}{\ket{\Psi^+}}  % Bell state Psi+
+\newcommand{\bellpsim}{\ket{\Psi^-}} % Bell state Psi-
